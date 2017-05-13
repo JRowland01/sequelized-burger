@@ -1,0 +1,30 @@
+{
+  "name": "sequelized-burger",
+  "version": "1.0.0",
+  "description": "A sequelized version of the burger assignment.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JRowland01/sequelized-burger.git"
+  },
+  "author": "Jimmia Rowland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JRowland01/sequelized-burger/issues"
+  },
+  "homepage": "https://github.com/JRowland01/sequelized-burger#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0"
+  },
+  "engines": {
+    "node": "^6.9.4"
+  }
+}
