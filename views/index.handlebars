@@ -1,0 +1,73 @@
+<div class="container">
+ <div class="col-md-12">
+
+   <img src="assets/img/burger-logo.png" id="burger-logo" class="img-responsive center-block"/>
+
+</div>
+
+    <div class="row">
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 text-center">
+      <ul class="list-group add">
+        <li class="app-panels">
+          <form action="/orders/new" method="post">
+            <input class="form-control" name="burger" placeholder="Order A Burger">
+            </input>
+            <button class="add btn" type="submit" id="new-burger">Submit</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-6 text-center">
+       <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Ready for Pickup</h3>
+  </div>
+    <div class="panel-body">
+      <ul class="list-burger noteaten">
+        {{#each burgers}}
+          {{#if this.devoured}}
+            {{else}}
+              <li class="list-group-item">
+                <form action = "/orders/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="devoured" value="true">
+                  <button class="noteaten btn" type="submit">{{this.burger_name}}
+                  </button>
+                </form>
+              </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+     </div>
+  </div>
+</div>
+
+    <div class="col-md-6 text-center">
+     <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Burgers to Devour</h3>
+  </div>
+    <div class="panel-body">
+      <ul class="list-group eaten">
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li class="list-group-item">
+              <form action = "orders/delete/{{this.id }}?_method=DELETE" method="POST">
+                <button class="eaten btn" type="submit">Eat the {{this.burger_name}}</button>
+              </form>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+

@@ -1,0 +1,56 @@
+body {
+    background-image: url("/assets/img/burger-background.png");
+}
+
+#burger-logo {
+    height: 300px;
+    margin-bottom: 40px;
+    text-align: center !important;
+
+}
+
+#new-burger {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #fdd86d;
+}
+
+.panel-heading {
+    background-color: #ffeaae !important;
+}
+
+.panel-body {
+    background-color: #fdd86d;
+}
+
+.btn {
+    background-color: #f3be22;
+    border-color: #ffeaae;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/*Placeholder text properties in the order submission text field*/
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+}
