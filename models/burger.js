@@ -1,29 +1,18 @@
-var orm = require('../config/orm.js');
+'use strict';
+var Sequelize = require("sequelize");
 
-var burger = {
-    selectAll: function(cb) {
-        orm.selectAll(function(result) {
-            cb(result);
-        });
-    },
-    // The variables cols and vals are arrays. 
-    //'burgers' is the name of the database table.
-    insertOne: function(cols, vals, cb) {
-        orm.insertOne('burgers', cols, vals, function(res) {
-            cb(res);
-        });
-    },
-    updateOne: function(objColVals, condition, cb) {
-        orm.updateOne('burgers', objColVals, condition, function(res) {
-            cb(res);
-        });
-    },
-    deleteOne: function(cols, vals, cb) {
-        orm.deleteOne('burgers', cols, vals, function(res) {
-            cb(res);
-        });
+module.exports = function(sequelize) {
+  var Burger = sequelize.define('Burger', {
+    burger_name: Sequelize.STRING,
+    devoured: Sequelize.BOOLEAN,
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
     }
+  });
+  return Burger;
 };
-
-// Export the database functions for the controller (burgers_controller.js).
-module.exports = burger;
